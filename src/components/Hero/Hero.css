@@ -1,0 +1,145 @@
+/* --- HERO SECTION --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.hero-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-tint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.459);
+    z-index: 1;
+}
+
+.video-fade-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 1) 100%); */
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.hero-title {
+    font-size: clamp(3.5rem, 10vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #eeeeee;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Input Mockup (Botão de Ação) */
+.input-mockup {
+    width: 100%;
+    max-width: 580px;
+    background: var(--bg-overlay);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s;
+}
+
+.input-mockup:hover {
+    transform: translateY(-2px) scale(1.001);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.input-mockup:hover .input-icon {
+    background: var(--primary-blue-hover);
+}
+
+.input-text {
+    color: #888;
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+.input-icon {
+    background: var(--primary-blue);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease;
+}
+
+.input-icon svg {
+    width: 20px;
+}
+
+/* --- MOBILE HERO --- */
+@media (max-width: 900px) {
+    .hero-title {
+        font-size: 14vw;
+        margin-top: -2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        justify-content: end;
+        padding-bottom: 200px;
+        height: 90vh;
+    }
+
+    .hero-image-wrapper {
+        height: 100%;
+    }
+
+    .hero-fade-overlay {
+        height: 50%;
+    }
+
+    .input-icon {
+        height: 35px;
+    }
+}

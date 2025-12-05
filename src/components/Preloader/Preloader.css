@@ -1,0 +1,36 @@
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* Compatibilidade */
+    height: 100dvh; /* Mobile Moderno */
+    width: 100%;
+    background-color: #EEEEEE;
+    z-index: 99999; /* Acima de tudo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Transição suave de opacidade */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: all;
+}
+
+/* Classe adicionada pelo React quando termina de carregar */
+#preloader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader {
+    width: 60px;
+    height: auto;
+    animation: spin 2s linear infinite; /* 2s é mais fluido que 5s para loading */
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

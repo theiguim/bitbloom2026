@@ -1,0 +1,287 @@
+/* --- FOOTER CONTAINER --- */
+.bitbloom-footer {
+    background-color: var(--bg-secondary); /* Defina no globals ou use #f5f5f7 */
+    color: var(--text-color);
+    font-family: inherit;
+    padding-top: 4rem;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- NEWSLETTER / CONTATO --- */
+.footer-newsletter {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.footer-newsletter h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.footer-newsletter p {
+    color: var(--text-muted); /* #86868b */
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Formulário */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 420px;
+    margin: 2rem auto 1rem auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.form-row .input-group {
+    flex: 1;
+}
+
+.newsletter-form .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #fff;
+    border: 1px solid #d2d2d7;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 16px; /* Evita zoom no iOS */
+    color: #1d1d1f;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.newsletter-form .form-input:focus {
+    border-color: #0071e3;
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
+.newsletter-form textarea.form-input {
+    resize: vertical;
+    min-height: 80px;
+    border-radius: 20px; /* Textarea fica melhor com menos curva */
+}
+
+/* Botão Enviar */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #0071e3;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-top: 5px;
+}
+
+.submit-btn:hover {
+    background-color: #005bb5;
+    /* transform: translateY(-1px); */
+}
+
+.newsletter-disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+}
+
+/* --- LINKS SECTION --- */
+.footer-divider {
+    height: 1px;
+    background-color: #d2d2d7;
+    margin: 3rem 0;
+}
+
+.footer-links-section {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Marca */
+.footer-brand-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.footer-email {
+    color: #0071e3;
+    text-decoration: none;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.footer-socials a {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--text-color);
+}
+
+/* Colunas de Navegação */
+.footer-nav-column h3,
+.footer-contact-column h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.footer-nav-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav-column ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-nav-column ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav-column ul li a:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+/* Coluna Contato (Botão Extra) */
+.footer-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.footer-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #0071e3;
+    color: white !important;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.footer-contact-btn:hover {
+    background-color: #005bb5;
+}
+
+/* --- FOOTER BOTTOM --- */
+.footer-bottom {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem 0;
+    border-top: 1px solid #d2d2d7;
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.footer-tagline {
+    margin-left: 1rem;
+}
+
+.footer-legal-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+/* --- RESPONSIVIDADE FOOTER --- */
+@media (max-width: 1024px) {
+    /* No Desktop grande (solicitado anteriormente): Layout Ousado */
+    /* Para habilitar aquele layout ousado (texto esq / form dir) em telas grandes, 
+       descomente e ajuste as medias queries. Aqui mantive o padrão mobile-first clean */
+}
+
+@media (max-width: 900px) {
+    .footer-links-section {
+        grid-template-columns: 1fr 1fr; /* 2 colunas no tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-links-section {
+        grid-template-columns: 1fr; /* 1 coluna no mobile */
+        gap: 2rem;
+    }
+
+    .newsletter-form {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Volta o form row para coluna no mobile */
+    .form-row {
+        flex-direction: column;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .footer-tagline {
+        margin-left: 0;
+    }
+}

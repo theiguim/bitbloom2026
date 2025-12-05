@@ -1,0 +1,177 @@
+/* --- HEADER GERAL --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Padding padrão Desktop */
+    padding: 1.5rem 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Estado Scrolled (Desktop) */
+header.scrolled {
+    padding: 0.8rem 10rem;
+    background: rgba(235, 235, 235, 0.5);
+    backdrop-filter: blur(12px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* --- LOGO --- */
+.logo img {
+    height: 45px;
+    transition: 0.3s;
+}
+
+/* --- NAV DESKTOP --- */
+.nav-desktop {
+    display: flex;
+    gap: 2rem;
+    margin-left: 3rem;
+}
+
+.nav-desktop a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--bg-secondary); /* Defina essa var no globals.css ou substitua por #f5f5f7 */
+    letter-spacing: -0.01em;
+    transition: ease .3s;
+    text-decoration: none;
+}
+
+/* Cores do Texto Desktop ao Rolar */
+header.scrolled .nav-desktop a,
+header.scrolled .try-btn {
+    color: var(--text-color); /* Defina no globals ou use #1d1d1f */
+    margin-left: 15px;
+}
+
+/* Botão Desktop */
+.try-btn {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--bg-secondary);
+    letter-spacing: -0.01em;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+    background: transparent;
+    border: 1px solid transparent; 
+}
+
+.try-btn:hover{
+    background-color: transparent !important;
+}
+
+header.scrolled .try-btn {
+    border: 1px solid rgba(0, 0, 0, 0.267);
+}
+
+/* --- ICONE HAMBÚRGUER --- */
+.mobile-menu-icon {
+    display: none; /* Escondido no Desktop */
+    cursor: pointer;
+    width: 22px;
+    height: 15px;
+    position: relative;
+    z-index: 1100;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icon-bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff; /* Branco na Hero */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Cor do ícone ao rolar ou abrir menu */
+header.scrolled .icon-bar,
+header.menu-open .icon-bar {
+    background-color: #1d1d1f;
+}
+
+/* Animação do X do Menu Mobile */
+header.menu-open .icon-bar:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+header.menu-open .icon-bar:nth-child(2) { opacity: 0; }
+header.menu-open .icon-bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+
+/* --- MENU MOBILE OVERLAY --- */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 2rem 2rem 2rem;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.mobile-menu-overlay.active {
+    transform: translateY(0);
+}
+
+.mobile-nav-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.mobile-nav-content a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    text-decoration: none;
+}
+
+.mobile-cta-btn {
+    color: #0071e3 !important;
+    font-weight: 500;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.mobile-menu-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: start;
+    padding-bottom: 10rem;
+}
+
+.mobile-menu-footer img {
+    height: 45px;
+    width: auto;
+}
+
+
+/* --- RESPONSIVIDADE DO HEADER --- */
+@media (max-width: 900px) {
+    header { padding: 1.2rem 1.5rem; }
+    header.scrolled { padding: 1.2rem 1.5rem; } /* Sobrescreve para não pular */
+    
+    .nav-desktop, .desktop-only { display: none; }
+    .mobile-menu-icon { display: flex; }
+}

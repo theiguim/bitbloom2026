@@ -1,0 +1,165 @@
+/* --- SEÇÃO SCROLL FX (X.AI STYLE) --- */
+.scroll-fx-section {
+    padding: 1rem 0;
+    position: relative;
+    /* height: 70vh; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Esconde o texto quando ele sair muito para os lados */
+    /* background: #fff; */
+    perspective: 1000px;
+    /* O SEGREDO DO 3D: Define a profundidade da cena */
+}
+
+/* Configuração dos Textos Laterais */
+.fx-text-container {
+    position: absolute;
+    height: 100%;
+    /* top: 50%; */
+    transform: translateY(-50%);
+    /* Aumentamos a largura para garantir que o texto caiba sem quebrar linha errado */
+    width: 45%;
+    display: flex;
+    z-index: 10;
+    /* Sobre a imagem */
+    pointer-events: none;
+
+    /* RECOMENDAÇÃO DE DESIGN: 
+       Como o texto vai ficar EM CIMA da imagem, use isso para garantir leitura 
+       se a imagem for clara. Inverte a cor do texto baseado no fundo. */
+    mix-blend-mode: difference;
+    color: #1616162c;
+    /* Destaque preto */
+    /* text-shadow: 2px 2px rgba(0, 0, 0, 0.281); */
+}
+
+.fx-text-container.left {
+    left: auto;
+    /* Reseta posicionamento antigo */
+
+    /* O SEGREDO: Cola ele no centro da tela */
+    right: 50%;
+    top: 100%;
+
+    /* Adiciona o "mínimo espaçamento" (espaço de uma palavra) */
+    margin-right: 15px;
+
+    justify-content: flex-end;
+    /* Alinha o texto para a direita (perto do centro) */
+    text-align: right;
+}
+
+.fx-text-container.right {
+    right: auto;
+    /* Reseta posicionamento antigo */
+
+    /* O SEGREDO: Cola ele no centro da tela */
+    left: 50%;
+    top: 90%;
+
+    /* Adiciona o "mínimo espaçamento" (espaço de uma palavra) */
+    margin-left: 15px;
+
+    justify-content: flex-start;
+    /* Alinha o texto para a esquerda (perto do centro) */
+    text-align: left;
+}
+
+.fx-text {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    /* Impede que quebre linha indesejada */
+    will-change: transform;
+}
+
+.text-highlight {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-hover), var(--text-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+}
+
+/* --- O ELEMENTO CENTRAL 3D --- */
+.fx-center-stage {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transform-style: preserve-3d;
+}
+
+/* Aura/Glow atrás do logo */
+.fx-aura {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 113, 227, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: pulse-aura 5s infinite alternate;
+}
+
+@keyframes pulse-aura {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    100% { transform: scale(1.2); opacity: 0.8; }
+}
+
+/* Wrapper do Logo que vai girar */
+.fx-logo-wrapper {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    transform-style: preserve-3d;
+    will-change: transform;
+    animation: float-y 10s ease-in-out infinite;
+    opacity: 0.95;
+}
+
+@keyframes float-y {
+    0%, 100% { transform: translateY(0) rotateY(0deg); }
+    50% { transform: translateY(-15px) rotateY(10deg); }
+}
+
+.fx-logo-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    backface-visibility: visible;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+}
+
+/* --- MOBILE PARALLAX --- */
+@media (max-width: 768px) {
+    .scroll-fx-section {
+        height: auto;
+        margin: -2rem 0;
+    }
+
+    .fx-text-container {
+        width: 90%;
+    }
+
+    .fx-text {
+        font-size: 2.5rem;
+    }
+
+    .fx-center-stage {
+        width: 400px;
+        height: 400px;
+    }
+
+    .fx-logo-wrapper {
+        width: 400px;
+        height: 400px;
+    }
+}
