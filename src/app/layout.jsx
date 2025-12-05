@@ -91,7 +91,7 @@ export const metadata = {
 
   // Ícones
   icons: {
-    icon: "/favicon.ico", // Garanta que tenha um favicon na pasta public
+    icon: "/images/spin-logo.png", // Garanta que tenha um favicon na pasta public
     shortcut: "/images/logo.png",
     apple: "/images/logo.png",
   },
