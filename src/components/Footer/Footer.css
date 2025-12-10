@@ -77,26 +77,6 @@
     border-radius: 20px; /* Textarea fica melhor com menos curva */
 }
 
-/* Botão Enviar */
-.submit-btn {
-    width: 100%;
-    padding: 14px;
-    background-color: #0071e3;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
-    margin-top: 5px;
-}
-
-.submit-btn:hover {
-    background-color: #005bb5;
-    /* transform: translateY(-1px); */
-}
-
 .newsletter-disclaimer {
     font-size: 0.8rem;
     color: var(--text-muted);
@@ -191,28 +171,9 @@
 
 /* Coluna Contato (Botão Extra) */
 .footer-btn {
-    background: transparent;
-    border: none;
-    padding: 0;
     margin-top: 10px;
 }
 
-.footer-contact-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    background-color: #0071e3;
-    color: white !important;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.footer-contact-btn:hover {
-    background-color: #005bb5;
-}
 
 /* --- FOOTER BOTTOM --- */
 .footer-bottom {

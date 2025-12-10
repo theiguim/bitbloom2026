@@ -19,33 +19,8 @@
     margin: auto;
     height: auto;
     display: block;
-    /* Filtros opcionais se quiser grayscale */
 }
 
-/* Tipografia */
-.section-tag {
-    color: var(--primary-blue);
-    font-weight: 600;
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.section-headline {
-    font-size: 3rem;
-    font-weight: 600;
-    color: var(--text-color);
-    letter-spacing: -0.03em;
-}
-
-.section-subhead {
-    font-size: 1rem;
-    color: var(--text-muted);
-    margin-top: 0.5rem;
-    font-weight: 400;
-}
 
 @media (max-width: 768px) {
     .portfolio-section {

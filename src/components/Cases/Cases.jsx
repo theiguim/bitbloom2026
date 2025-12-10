@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import "./Cases.css";
+import SectionHeader from "../ui/SectionHeader/SectionHeader";
 
 export default function Cases() {
   const trackRef = useRef(null);
@@ -12,8 +13,8 @@ export default function Cases() {
   const handleScroll = (direction) => {
     if (trackRef.current) {
       // 320px (card width) + 40px (gap) = 360px
-      const scrollAmount = 360; 
-      
+      const scrollAmount = 360;
+
       if (direction === "left") {
         trackRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
       } else {
@@ -25,10 +26,11 @@ export default function Cases() {
   return (
     <section className="gallery-section">
       <div className="gallery-header">
-        <div>
-          <span className="tag-bracket">Selected Works</span>
-          <h2 className="gallery-title">Cases recentes.</h2>
-        </div>
+        <SectionHeader tag="Cases Selecionados"
+          title="Cases rescentes."
+          align="left" 
+        />
+
         <div className="scroll-hint">
           <div className="scroll-line"></div>
           Arraste / Scroll
@@ -37,10 +39,10 @@ export default function Cases() {
       </div>
 
       <div className="gallery-wrapper">
-        
+
         {/* Botão Esquerda */}
-        <button 
-          className="gallery-nav-btn prev" 
+        <button
+          className="gallery-nav-btn prev"
           aria-label="Scroll Left"
           onClick={() => handleScroll("left")}
         >
@@ -48,7 +50,7 @@ export default function Cases() {
         </button>
 
         <div className="gallery-track" ref={trackRef}>
-          
+
           <a href="https://www.legendarioslascampanas.com" target="_blank" className="project-poster">
             <img className="poster-img" src="/images/works/lgnd.png" alt="Legendários" />
             <div className="poster-info">
@@ -83,18 +85,18 @@ export default function Cases() {
 
           {/* Repetido apenas para mostrar scroll se necessário */}
           <a href="#" className="project-poster">
-             <img className="poster-img" src="/images/works/bb.png" alt="Exemplo Extra" />
-             <div className="poster-info">
-               <p className="poster-cat">Tecnologia</p>
-               <h3 className="poster-title">Mais Projetos...</h3>
-             </div>
+            <img className="poster-img" src="/images/works/bb.png" alt="Exemplo Extra" />
+            <div className="poster-info">
+              <p className="poster-cat">Tecnologia</p>
+              <h3 className="poster-title">Mais Projetos...</h3>
+            </div>
           </a>
 
         </div>
 
         {/* Botão Direita */}
-        <button 
-          className="gallery-nav-btn next" 
+        <button
+          className="gallery-nav-btn next"
           aria-label="Scroll Right"
           onClick={() => handleScroll("right")}
         >

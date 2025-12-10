@@ -52,7 +52,7 @@ export default function Header() {
       <header className={`${scrolled ? "scrolled" : ""} ${menuOpen ? "menu-open" : ""}`}>
         
         <div className="header-left">
-          <Link href="#company" className="logo">
+          <Link href="/" className="logo">
             {/* Troca de imagem via Lógica Ternária (React Way) */}
             <img 
               src={scrolled ? "/images/logo.png" : "/images/logo-w.png"} 

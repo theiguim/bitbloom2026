@@ -1,0 +1,62 @@
+/* Container Principal */
+.section-header {
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Alinhamentos */
+.section-header.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+.section-header.left {
+    text-align: left;
+    max-width: 600px;
+}
+
+/* 1. Tag (Subtitle em cima) */
+.header-tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #007aff; /* Azul Apple */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    display: block;
+    font-family: inherit;
+}
+
+/* 2. Título H2 */
+.header-title {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #0f172a; /* Sua cor personalizada */
+}
+
+/* 3. Descrição (Subhead) - SEUS ESTILOS AQUI */
+.header-desc {
+    font-size: 1rem;
+    color: #86868b; /* var(--text-muted) */
+    margin-top: 0.5rem;
+    font-weight: 400;
+    line-height: 1.6; /* Adicionei para melhor leitura se quebrar linha */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .section-header{
+        padding: 0 3rem 0 3rem;
+    }
+    .header-title {
+        font-size: 2.8rem;
+    }
+    
+    .section-header {
+        margin-bottom: 2rem;
+    }
+}

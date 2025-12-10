@@ -26,7 +26,7 @@
 .loader {
     width: 60px;
     height: auto;
-    animation: spin 2s linear infinite; /* 2s é mais fluido que 5s para loading */
+    animation: spin 4s linear infinite; /* 2s é mais fluido que 5s para loading */
 }
 
 @keyframes spin {

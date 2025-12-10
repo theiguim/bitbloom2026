@@ -1,0 +1,48 @@
+import AutomacaoData from "../AutomacaoData";
+import { targetCities } from "@/lib/cities";
+
+const formatCityName = (slug) => {
+  if (!slug) return "";
+  return slug
+    .split("-")
+    .map((word) => {
+        if (["de", "da", "do", "del", "em"].includes(word)) return word; 
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+};
+
+// SEO Dinâmico Local
+export async function generateMetadata({ params }) {
+  const city = formatCityName(params.city);
+
+  return {
+    title: `Automação de Processos e IA em ${city} | BitBloom AI`,
+    description: `Consultoria de Automação e Inteligência Artificial em ${city}. Integre seus sistemas, crie chatbots e elimine trabalho manual. Atendimento para empresas de ${city} e região.`,
+    keywords: [
+      `automação de processos em ${city}`,
+      `empresa de ia em ${city}`,
+      `integração de sistemas ${city}`,
+      `chatbot whatsapp ${city}`,
+      "consultoria n8n", "python"
+    ],
+    alternates: {
+      canonical: `https://www.bitbloomai.com/automacao-ia/${params.city}`,
+    },
+    openGraph: {
+      title: `Líder em Automação Comercial em ${city} | BitBloom AI`,
+      description: `Sua empresa em ${city} rodando no piloto automático. Reduza custos e erros com nossa tecnologia.`,
+      images: ["/images/preview.png"],
+    },
+  };
+}
+
+// SSG para cidades prioritárias
+export async function generateStaticParams() {
+  return targetCities.map((city) => ({ city }));
+}
+
+export default function CityAutomacaoPage({ params }) {
+  const cityName = formatCityName(params.city);
+  return <AutomacaoData city={cityName} />;
+}

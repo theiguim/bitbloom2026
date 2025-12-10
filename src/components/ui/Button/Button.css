@@ -1,0 +1,87 @@
+/* --- BASE (Configurações compartilhadas) --- */
+.ui-btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    /* Seu border-radius original */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: inherit;
+    font-weight: 500;
+    transition: 0.3s ease;
+    /* Sua transição original */
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* --- TAMANHOS (Ajustado para o seu padrão de 13px) --- */
+.ui-btn.md {
+    padding: 12px 15px;
+    /* Seu padding original */
+    font-size: 13px;
+    /* Sua font original */
+}
+
+.ui-btn.lg {
+    padding: 16px 32px;
+    font-size: 1rem;
+    /* Um pouco maior para Heros/CTAs importantes */
+}
+
+/* --- VARIANTES --- */
+
+/* 1. Primary (Seu botão padrão azul) */
+.ui-btn.primary {
+    background-color: var(--primary-blue);
+    /* Usa sua variável global */
+    color: white;
+}
+
+.ui-btn.primary:hover {
+    background-color: var(--primary-blue-hover);
+    /* Sua variável de hover */
+}
+
+/* 2. Alt / Glass (Seu .alt-btn original) */
+/* Ideal para usar sobre imagens de fundo */
+.ui-btn.alt {
+    background-color: rgba(255, 255, 255, 0.603);
+    /* Seu valor exato */
+    color: rgb(20, 20, 20);
+    /* Seu valor exato */
+    backdrop-filter: blur(4px);
+    /* (Opcional) Melhora a leitura sobre imagens */
+}
+
+.ui-btn.alt:hover {
+    background-color: rgba(255, 255, 255, 0.836);
+    /* Seu valor exato */
+}
+
+/* 3. Outline (Para quando precisar de algo mais discreto) */
+.ui-btn.outline {
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+}
+
+.ui-btn.outline:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+
+
+.ui-btn.cta {
+    background-color: var(--primary-blue);
+    font-weight: bolder;
+    font-size: 1.2em;
+    color: white;
+    padding: 20px 20px;
+}
+
+.ui-btn.cta:hover {
+    background-color: var(--primary-blue-hover);
+}

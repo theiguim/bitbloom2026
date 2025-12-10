@@ -1,13 +1,16 @@
 import { ArrowUpRight } from "lucide-react";
 import "./Services.css";
+import SectionHeader from "../ui/SectionHeader/SectionHeader";
+import Link from "next/link";
 
 export default function Services() {
   return (
     <section id="services" className="services-ref">
-      <span className="tag-bracket">Nossos Serviços</span>
-      <h2 className="services-headline">
-        Engenharia de software<br />para seu negócio.
-      </h2>
+      <SectionHeader tag="Nossos Serviços"
+        title="Engenharia de software para seu negócio."
+        align="left"
+      />
+
 
       <div className="services-grid-lines">
 
@@ -31,9 +34,11 @@ export default function Services() {
             </div>
           </div>
 
-          <div className="bottom-link">
-            Saber mais <ArrowUpRight size={16} />
-          </div>
+          <Link href='/desenvolvimento-web'>
+            <div className="bottom-link">
+              Saber mais <ArrowUpRight size={16} />
+            </div>
+          </Link>
         </div>
 
         {/* Coluna 2: IA */}
@@ -46,9 +51,11 @@ export default function Services() {
             <div className="wf-line-diagonal"></div>
           </div>
 
-          <div className="bottom-link">
-            Automatizar <ArrowUpRight size={16} />
-          </div>
+          <Link href='automacao-ia'>
+            <div className="bottom-link">
+              Automatizar <ArrowUpRight size={16} />
+            </div>
+          </Link>
         </div>
 
         {/* Coluna 3: Sistemas */}
@@ -67,9 +74,11 @@ export default function Services() {
             </div>
           </div>
 
-          <div className="bottom-link">
-            Iniciar projeto <ArrowUpRight size={16} />
-          </div>
+          <Link href='sistemas-custom'>
+            <div className="bottom-link">
+              Iniciar projeto <ArrowUpRight size={16} />
+            </div>
+          </Link>
         </div>
 
       </div>

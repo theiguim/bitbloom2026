@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Instagram, Linkedin, Facebook } from "lucide-react";
 import "./Footer.css"
+import Button from "../ui/Button/Button";
 
 export default function Footer() {
   return (
@@ -27,8 +28,7 @@ export default function Footer() {
             <div className="input-group">
               <textarea placeholder="Como podemos ajudar?" rows="3" required className="form-input"></textarea>
             </div>
-
-            <button type="submit" className="submit-btn">Enviar Solicitação</button>
+            <Button type="submit">Enviar Solicitação</Button>
           </form>
 
           <p className="newsletter-disclaimer">Seus dados estão seguros conosco. Responderemos em até 24h úteis.</p>
@@ -43,7 +43,7 @@ export default function Footer() {
             </Link>
             <p>CNPJ: 61.635.661/0001-88</p>
             <a href="mailto:bitbloomai@gmail.com" className="footer-email">bitbloomai@gmail.com</a>
-            
+
             <div className="footer-socials">
               <a href="https://www.instagram.com/bitbloomai" target="_blank" aria-label="Instagram">
                 <Instagram size={20} />
@@ -82,11 +82,12 @@ export default function Footer() {
             <h3>Contato</h3>
             <p>Pronto para inovar?</p>
             <p>Fale com nossos especialistas.</p>
-            <button className="footer-btn">
-                <a href="https://wa.me/5532999526526" target="_blank" className="footer-contact-btn" style={{ textDecoration: 'none', color: 'white' }}>
-                  Entrar em contato
-                </a>
-            </button>
+            <Button className="footer-btn">
+              <a href="https://wa.me/5532999526526" target="_blank" className="footer-contact-btn" style={{ textDecoration: 'none', color: 'white' }}>
+                Entrar em contato
+              </a>
+            </Button>
+
           </div>
         </div>
       </div>

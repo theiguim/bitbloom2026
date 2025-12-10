@@ -10,6 +10,7 @@ import {
   ArrowRight 
 } from "lucide-react";
 import "./LeadForm.css";
+import Button from "../ui/Button/Button";
 
 export default function LeadForm({ isOpen, onClose }) {
   // Estado inicial
@@ -176,9 +177,7 @@ export default function LeadForm({ isOpen, onClose }) {
             </select>
           </div>
 
-          <button type="submit" className="lead-submit-btn">
-            Solicitar Análise Técnica <ArrowRight size={18} />
-          </button>
+          <Button className="lead-submit-btn" type="submit">Solicitar Análise Técnica </Button>
 
           <p className="lead-footer-text">Seus dados estão protegidos sob NDA padrão.</p>
         </form>

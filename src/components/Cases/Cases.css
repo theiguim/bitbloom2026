@@ -14,19 +14,8 @@
 }
 
 .gallery-header {
-    padding: 0 3rem;
-    margin-bottom: 3rem;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-}
-
-.gallery-title {
-    font-size: 3rem;
-    font-weight: 600;
-    color: #1d1d1f;
-    letter-spacing: -0.03em;
-    margin-top: 10px;
 }
 
 .scroll-hint {
@@ -38,28 +27,36 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+
 }
 
 .scroll-line {
-    width: 40px; height: 1px; background: #ddd;
+    width: 40px;
+    height: 1px;
+    background: #ddd;
 }
 
-.icon-small { width: 16px; }
+.icon-small {
+    width: 16px;
+}
 
 /* Track Scroll */
 .gallery-track {
     display: flex;
     gap: 40px;
     overflow-x: auto;
-    padding: 0 3rem 4rem 3rem;
+    padding: 0 0 4rem 0;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding-top: 2px; /* Evita corte de sombra */
+    padding-top: 2px;
+    /* Evita corte de sombra */
 }
 
-.gallery-track::-webkit-scrollbar { display: none; }
+.gallery-track::-webkit-scrollbar {
+    display: none;
+}
 
 /* Botões Nav */
 .gallery-nav-btn {
@@ -88,8 +85,13 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
 }
 
-.gallery-nav-btn.prev { left: 2rem; }
-.gallery-nav-btn.next { right: 2rem; }
+.gallery-nav-btn.prev {
+    left: 2rem;
+}
+
+.gallery-nav-btn.next {
+    right: 2rem;
+}
 
 /* Cards */
 .project-poster {
@@ -129,9 +131,11 @@
     position: absolute;
     padding: 20px;
     color: #fff;
-    bottom: 0; left: 0; right: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     /* Gradiente para leitura */
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
 }
 
 .poster-title {
@@ -150,8 +154,21 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-    .gallery-section { padding: 3rem 0 0 0; }
-    .gallery-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-    .gallery-nav-btn { display: none; }
-    .project-poster { height: 430px; width: 280px; }
+    .gallery-header {
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+
+    .gallery-track {
+        padding: 0 0 0 3rem;
+    }
+
+    .gallery-nav-btn {
+        display: none;
+    }
+
+    .project-poster {
+        height: 430px;
+        width: 280px;
+    }
 }
