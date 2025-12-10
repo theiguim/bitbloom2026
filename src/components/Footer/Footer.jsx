@@ -2,38 +2,15 @@ import Link from "next/link";
 import { Instagram, Linkedin, Facebook } from "lucide-react";
 import "./Footer.css"
 import Button from "../ui/Button/Button";
+import FooterForm from "../FooterForm/FooterForm";
 
 export default function Footer() {
   return (
     <footer className="bitbloom-footer">
       <div className="footer-content">
-        <div className="footer-newsletter">
-          <h3>Alguma dúvida?</h3>
-          <p>Preencha os dados abaixo e nossa equipe entrará em contato para discutir como podemos inovar o seu negócio.</p>
 
-          <form className="newsletter-form contact-expanded">
-            <div className="form-row">
-              <div className="input-group">
-                <input type="text" placeholder="Seu nome" required className="form-input" />
-              </div>
-              <div className="input-group">
-                <input type="tel" placeholder="WhatsApp" required className="form-input" />
-              </div>
-            </div>
-
-            <div className="input-group">
-              <input type="email" placeholder="Seu e-mail corporativo" required className="form-input" />
-            </div>
-
-            <div className="input-group">
-              <textarea placeholder="Como podemos ajudar?" rows="3" required className="form-input"></textarea>
-            </div>
-            <Button type="submit">Enviar Solicitação</Button>
-          </form>
-
-          <p className="newsletter-disclaimer">Seus dados estão seguros conosco. Responderemos em até 24h úteis.</p>
-        </div>
-
+        <FooterForm />
+        
         <div className="footer-divider"></div>
 
         <div className="footer-links-section">

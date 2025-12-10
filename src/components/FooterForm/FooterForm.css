@@ -1,0 +1,137 @@
+.footer-newsletter {
+    position: relative;
+    width: 100%;
+    /* Define uma altura mínima para evitar que o footer "pule" muito quando o conteúdo mudar */
+    min-height: 400px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente o sucesso */
+}
+
+/* Animação Rápida e Suave */
+.fade-in-fast {
+    animation: fadeInSmooth 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes fadeInSmooth {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Wrapper do Conteúdo do Form (Texto + Inputs) */
+.form-content-wrapper {
+    width: 100%;
+}
+
+/* Wrapper do Sucesso (Centralizado e Limpo) */
+.success-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    height: 100%;
+}
+
+.success-icon-bg {
+    width: 70px;
+    height: 70px;
+    background: rgba(74, 222, 128, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.15);
+}
+
+.success-wrapper h4 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.success-wrapper p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+/* --- NEWSLETTER / CONTATO --- */
+.footer-newsletter {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.footer-newsletter h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.footer-newsletter p {
+    color: var(--text-muted); /* #86868b */
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Formulário */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 420px;
+    margin: 2rem auto 1rem auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.form-row .input-group {
+    flex: 1;
+}
+
+.newsletter-form .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #fff;
+    border: 1px solid #d2d2d7;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 16px; /* Evita zoom no iOS */
+    color: #1d1d1f;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.newsletter-form .form-input:focus {
+    border-color: #0071e3;
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
+.newsletter-form textarea.form-input {
+    resize: vertical;
+    min-height: 80px;
+    border-radius: 20px; /* Textarea fica melhor com menos curva */
+}
+
+.newsletter-disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+}
