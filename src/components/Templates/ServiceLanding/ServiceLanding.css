@@ -435,44 +435,17 @@
 
 /* --- SERVIÇOS: TANGIBLE ENGINEERING (Branco Limpo) --- */
 .web-types {
-  padding: 6rem 2rem;
+  padding: 6rem 0;
   max-width: 1200px;
   margin: 0 auto;
   background: white;
 }
 
-.types-header {
-  text-align: center;
-  margin-bottom: 4rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.types-header h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--text-navy);
-  margin-top: 1rem;
-  letter-spacing: -0.02em;
-}
-
-.types-header p {
-  color: var(--text-slate);
-  font-size: 1.1rem;
-  margin-top: 1rem;
-}
-
-.tag-bracket {
-  color: var(--primary-blue);
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-}
 
 /* New Grid Structure */
 .types-list-modern {
+  padding: 0 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 2rem;
@@ -1203,7 +1176,9 @@
   .step-number {
     font-size: 0.7rem;
   }
+
   .process-step.active {
     transform: translateX(0px);
   }
+
 }

@@ -32,6 +32,24 @@ export default function LeadForm({ isOpen, onClose }) {
     alert(`Formulário enviado! Serviço: ${selectedService}`);
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      // 1. Trava o scroll do HTML e do Body
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden"; 
+    } else {
+      // 2. Destrava (remove o estilo inline)
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
+
+    // Cleanup: Destrava caso o componente desmonte abruptamente
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
     <div className={`lead-overlay ${isOpen ? "active" : ""}`}>
       

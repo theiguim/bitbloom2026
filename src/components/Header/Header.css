@@ -23,8 +23,8 @@ header {
 header.scrolled {
     padding: 0.8rem 10rem;
     background: rgba(235, 235, 235, 0.5);
-    backdrop-filter: blur(12px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
