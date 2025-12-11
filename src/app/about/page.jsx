@@ -149,13 +149,10 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
-
-            {/* --- SEÇÃO 3: EXPERTISE STRIP (COM ANIMAÇÃO) --- */}
             <section className="about-expertise-strip" ref={statsRef}>
                 <div className="about-expertise-content">
 
                     <div className="about-stat-item">
-                        {/* Contador Animado */}
                         <h4>+{countYears} Anos</h4>
                         <p>Sinergia & Parceria</p>
                     </div>
