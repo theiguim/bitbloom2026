@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="footer-content">
 
         <FooterForm />
-        
+
         <div className="footer-divider"></div>
 
         <div className="footer-links-section">
@@ -19,6 +19,7 @@ export default function Footer() {
               <img src="/images/logo.png" alt="BitBloom AI Logo" />
             </Link>
             <p>CNPJ: 61.635.661/0001-88</p>
+            <p>São João Del Rei, Minas Gerais</p>
             <a href="mailto:bitbloomai@gmail.com" className="footer-email">bitbloomai@gmail.com</a>
 
             <div className="footer-socials">

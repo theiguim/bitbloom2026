@@ -4,45 +4,43 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import ChatModal from "@/components/ChatModal/ChatModal";
 import Preloader from "@/components/Preloader/Preloader";
-import JsonLd from "@/components/JsonLd/JsonLd"; // 
+import JsonLd from "@/components/JsonLd/JsonLd"; 
 
 const inter = Inter({ subsets: ["latin"] });
 
-// --- CONFIGURAÇÃO DE SEO DE ELITE ---
+// --- SEO: ESTRATÉGIA DE DOMINAÇÃO LOCAL (SJDR) ---
 export const metadata = {
-  metadataBase: new URL("https://www.bitbloomai.com"), // MUITO IMPORTANTE: Sua URL final
+  metadataBase: new URL("https://www.bitbloomai.com"),
   
   title: {
-    default: "BitBloom AI | Software House, Sites e Automação Inteligente",
-    template: "%s | BitBloom AI"
+    default: "BitBloom AI | Criação de Sites e Software em São João del-Rei",
+    template: "%s | BitBloom AI - SJDR"
   },
   
-  description: "Transforme seu negócio com softwares sob medida, sites de alta performance e automações com IA. Entrega express, suporte dedicado e código zero template. Atendemos todo o Brasil.",
+  description: "A 1ª Software House de Elite em São João del-Rei e Região. Transforme seu negócio com sites de alta performance, sistemas sob medida e automação com IA. Tecnologia de ponta perto de você.",
   
   applicationName: "BitBloom AI",
   
   keywords: [
-    // Palavras-chave de Solução (Dor do Cliente)
-    "Como criar um site de vendas",
+    // 1. TERMOS DE CAUDA LONGA LOCAIS (Ouro para SEO Local)
+    "Criação de sites em São João del-Rei",
+    "Desenvolvimento de software SJDR",
+    "Agência de sites em São João del-Rei",
+    "Sistemas web Tiradentes e Região",
+    "Automação comercial em São João del-Rei",
+    "Empresa de TI em Minas Gerais",
+    "Programador em São João del-Rei",
+    
+    // 2. SOLUÇÕES (Dor do Cliente)
+    "Como vender mais online",
+    "Sistema de gestão personalizado",
     "Automatizar atendimento WhatsApp",
-    "Desenvolvimento de aplicativo delivery",
-    "Sistema de gestão para empresas",
-    "Melhorar vendas online",
-    "Site rápido para Google",
+    "Site rápido e moderno",
     
-    // Palavras-chave de Serviço (O que você faz)
-    "Software House Minas Gerais",
-    "Desenvolvimento Web Next.js",
-    "Criação de Landing Pages Alta Conversão",
-    "Automação com Inteligência Artificial",
-    "Consultoria de TI",
-    "Fábrica de Software",
-    "Ecommerce personalizado",
-    
-    // Diferenciais (USP)
-    "Desenvolvimento de software ágil",
-    "Sistemas sob medida sem template",
-    "Software House Express",
+    // 3. AUTORIDADE TÉCNICA
+    "Software House Next.js",
+    "Desenvolvimento React Native",
+    "Consultoria de IA para empresas",
     "BitBloom AI"
   ],
 
@@ -50,7 +48,6 @@ export const metadata = {
   creator: "BitBloom AI",
   publisher: "BitBloom AI",
   
-  // Como aparece no Google
   robots: {
     index: true,
     follow: true,
@@ -63,40 +60,45 @@ export const metadata = {
     },
   },
 
-  // Como aparece no WhatsApp / Facebook / LinkedIn
-  openGraph: {
-    title: "BitBloom AI | Inove. Floresça.",
-    description: "Software House especializada em soluções digitais de alta performance e IA. Do MVP ao Enterprise.",
-    url: "https://www.bitbloomai.com",
-    siteName: "BitBloom AI",
-    images: [
-      {
-        url: "/images/preview.png", // Sua imagem de compartilhamento
-        width: 1200,
-        height: 630,
-        alt: "BitBloom AI - Software House",
-      },
-    ],
-    locale: "pt_BR",
-    type: "website",
+  // GEO TAGS (Importante para Mobile Search)
+  // Essas meta tags ajudam o Google Maps e buscas "perto de mim"
+  other: {
+    "geo.region": "BR-MG",
+    "geo.placename": "São João del-Rei",
+    "geo.position": "-21.135;-44.261", // Coordenadas aproximadas de SJDR
+    "ICBM": "-21.135, -44.261"
   },
 
-  // Como aparece no Twitter/X
+  openGraph: {
+    title: "BitBloom AI | Tecnologia de Ponta em São João del-Rei",
+    description: "Software House especializada em soluções digitais. Sites, Sistemas e IA com engenharia de elite no coração de Minas.",
+    url: "https://www.bitbloomai.com",
+    siteName: "BitBloom AI",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/images/preview.png",
+        width: 1200,
+        height: 630,
+        alt: "BitBloom AI - Software House SJDR",
+      },
+    ],
+  },
+
   twitter: {
     card: "summary_large_image",
-    title: "BitBloom AI | Software House & IA",
-    description: "Desenvolvimento sob medida e automações inteligentes. Entrega rápida e suporte premium.",
+    title: "BitBloom AI | Software House SJDR",
+    description: "Inove e Floresça. Desenvolvimento Web e IA em São João del-Rei.",
     images: ["/images/preview.png"],
   },
 
-  // Ícones
   icons: {
-    icon: "/images/spin-logo.png", // Garanta que tenha um favicon na pasta public
+    icon: "/images/spin-logo.png",
     shortcut: "/images/logo.png",
     apple: "/images/logo.png",
   },
   
-  // Canônico (Evita conteúdo duplicado)
   alternates: {
     canonical: "https://www.bitbloomai.com",
   },
@@ -106,11 +108,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
       <head>
-        {/* Cor da barra de navegação mobile (Safari/Chrome) */}
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body className={inter.className}>
-        <JsonLd /> {/* Injeção de Dados Estruturados */}
+        <JsonLd /> {/* ESSENCIAL PARA O LOCAL PACK (MAPA) */}
         <Preloader />
         <Header />
         {children}

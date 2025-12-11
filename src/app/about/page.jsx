@@ -124,9 +124,9 @@ export default function AboutPage() {
 
                         <p className="about-story-text">
                             O tempo nos conectou novamente no empreendedorismo.
-                            <strong> Augusto</strong>, formando em Engenharia e fundador da <em>Black Brian</em>,
+                            <strong> Augusto</strong>, formando em Engenharia Mecânica (UFSJ) e fundador da <em>Black Brian</em>,
                             construiu repertório sólido em estratégia, gestão e desenvolvimento de negócios.
-                            <strong> Igor</strong>, formado em Gestão de TI, consolidou sua experiência atuando em startup local,
+                            <strong> Igor</strong>, formado em Gestão de TI (IFMG), consolidou sua experiência atuando em startup local,
                             aprofundando-se em web, automações e produtos digitais.
                         </p>
 
