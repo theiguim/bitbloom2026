@@ -152,7 +152,7 @@ const getContent = (city) => {
     process: {
       header: {
         tag: "Workflow",
-        title: "Como implementamos.",
+        title: "Nossa execução.",
         description: "Sem interromper sua operação atual. Construímos em paralelo."
       },
       steps: [

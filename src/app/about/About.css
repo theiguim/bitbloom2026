@@ -1,0 +1,221 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    --bg-white: #ffffff;
+    --bg-gray: #f5f5f7;
+    --text-primary: #1d1d1f;
+    --text-secondary: #424245;
+    --accent-blue: #0071e3;
+    --radius-card: 24px;
+}
+
+.about-page {
+    background-color: var(--bg-white);
+    font-family: 'Inter', -apple-system, sans-serif;
+    padding-top: 0;
+}
+
+/* --- HERO DARK COM CARDS --- */
+.about-main-hero {
+    position: relative;
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #050505;
+    padding: 8rem 2rem 4rem;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero-aurora-bg {
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 113, 227, 0.15) 0%, rgba(0, 0, 0, 0) 50%),
+                radial-gradient(circle at 80% 20%, rgba(64, 224, 208, 0.1) 0%, rgba(0, 0, 0, 0) 40%);
+    animation: aurora-spin 40s linear infinite;
+    z-index: 0; pointer-events: none; opacity: 0.8;
+}
+
+@keyframes aurora-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+.hero-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* --- AJUSTE DO SECTION HEADER NO HERO --- */
+/* Força o texto do SectionHeader a ficar branco apenas aqui */
+.aboutHeader {
+    text-align: center;
+    max-width: 600px !important;
+    margin-bottom: 0 !important;
+}
+
+/* Seletor profundo para garantir override do CSS do componente */
+.aboutHeader h2, 
+.aboutHeader {
+    color: #ffffff !important;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+}
+
+.aboutHeader p,
+.aboutHeader  {
+    color: #a1a1a6 !important;
+    font-size: 1.2rem;
+}
+
+.aboutHeader span,
+.aboutHeader {
+    color: var(--accent-blue) !important;
+}
+
+/* Grid de Cards no Hero (Glassmorphism) */
+.about-hero-values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    animation: fadeUp 1.2s ease forwards 0.3s;
+    opacity: 0;
+}
+
+.about-hero-value-card {
+    background: rgba(255, 255, 255, 0.05); /* Vidro escuro */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.about-hero-value-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+    cursor: default;
+}
+
+.h-icon {
+    margin-bottom: 1.5rem;
+    color: var(--accent-blue);
+}
+
+.about-hero-value-card h3 {
+    font-size: 1.4rem; font-weight: 700; margin-bottom: 0.8rem; color: #fff;
+}
+
+.about-hero-value-card p {
+    font-size: 0.95rem; color: #a1a1a6; line-height: 1.5;
+}
+
+.about-scroll-indicator {
+    margin-top: 2rem;
+    color: rgba(255,255,255,0.3);
+    animation: bounce 2s infinite;
+}
+
+/* --- SEÇÃO 2: A HISTÓRIA (Fundo Claro) --- */
+.about-story-section {
+    padding: 8rem 2rem;
+    background-color: var(--bg-white);
+    display: flex;
+    justify-content: center;
+}
+
+.about-story-content-wrapper {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.about-story-title {
+    font-size: 2.5rem; font-weight: 700; line-height: 1.1;
+    margin-bottom: 2rem; color: var(--text-primary); letter-spacing: -0.02em;
+}
+
+.about-story-text {
+    font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);
+    margin-bottom: 1.5rem; text-align: justify;
+}
+
+.about-story-highlight { font-weight: 600; color: #0071e3; }
+
+.about-founders-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px; 
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: 0 30px 60px -15px rgba(0,0,0,0.15);
+}
+
+.about-founders-image { object-fit: cover; transition: transform 2s ease; }
+.about-founders-image-wrapper:hover .about-founders-image { transform: scale(1.03); }
+
+/* --- EXPERTISE STRIP (Stats) --- */
+.about-expertise-strip {
+    background-color: #f5f5f7;
+    padding: 6rem 2rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.about-expertise-content {
+    max-width: 1000px; margin: 0 auto;
+    display: flex; justify-content: space-around; flex-wrap: wrap; gap: 3rem;
+}
+
+.about-stat-item { text-align: center; min-width: 200px; }
+
+/* NÚMEROS COM COR AZUL */
+.about-stat-item h4 { 
+    font-size: 3.5rem; 
+    font-weight: 800; 
+    color: var(--accent-blue); /* Azul Primário */
+    line-height: 1; 
+    margin-bottom: 0.5rem; 
+    font-variant-numeric: tabular-nums; /* Evita pulo na animação */
+}
+
+.about-stat-item p { 
+    font-size: 0.9rem; 
+    color: var(--text-light); 
+    text-transform: uppercase; 
+    font-weight: 700; 
+    letter-spacing: 0.1em; 
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .about-hero-values-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+    .about-hero-values-grid { grid-template-columns: 1fr; }
+    .about-story-content-wrapper { grid-template-columns: 1fr; gap: 3rem; }
+    .about-founders-image-wrapper { height: 400px; order: -1; }
+    
+    .aboutHeader h2 { font-size: 2.5rem !important; }
+    .about-stat-item h4 { font-size: 2.8rem; }
+}

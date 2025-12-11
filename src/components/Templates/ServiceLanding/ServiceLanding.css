@@ -818,7 +818,7 @@
 
 /* --- NOVA SEÇÃO: PROCESSO (HOW WE WORK) --- */
 .process-section {
-  padding: 8rem 2rem;
+  padding: 8rem 3rem;
   position: relative;
   overflow: hidden;
   background-color: var(--bg-alt-color);
@@ -1177,8 +1177,12 @@
     font-size: 0.7rem;
   }
 
+
+
   .process-step.active {
     transform: translateX(0px);
   }
+
+
 
 }

@@ -64,7 +64,7 @@ export default function Header() {
             <Link href="#services">Expertise</Link>
             <Link href="#products">Produtos</Link>
             <Link href="#portfolio">Cases</Link>
-            <Link href="#company">Sobre</Link>
+            <Link href="/about">Sobre</Link>
           </nav>
         </div>
 
@@ -90,7 +90,7 @@ export default function Header() {
             <Link href="#services" onClick={toggleMenu}>Expertise</Link>
             <Link href="#services" onClick={toggleMenu}>Produtos</Link>
             <Link href="#portfolio" onClick={toggleMenu}>Cases</Link>
-            <Link href="#company" onClick={toggleMenu}>Sobre</Link>
+            <Link href="/about" onClick={toggleMenu}>Sobre</Link>
 
             <button onClick={() => { toggleMenu(); toggleLeadForm(); }} className="mobile-cta-btn">
               Fazer Orçamento

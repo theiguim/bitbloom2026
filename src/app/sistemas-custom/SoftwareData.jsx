@@ -103,7 +103,7 @@ const getContent = (city) => {
     solutions: {
       header: {
         tag: "Engenharia de Software",
-        title: "O que desenvolvemos?",
+        title: "O que fazemos?",
         description: "Soluções robustas para problemas reais. Do backoffice ao bolso do cliente."
       },
       cards: [

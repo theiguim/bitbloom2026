@@ -101,7 +101,7 @@ export default function ServiceLanding({ content }) {
                         <h3>{card.title}</h3>
                         <p>{card.desc}</p>
                     </div>
-                </div>
+                </div> 
             ))}
           </div>
         </div>

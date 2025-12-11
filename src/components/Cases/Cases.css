@@ -1,6 +1,6 @@
 /* --- GALLERY SECTION --- */
 .gallery-section {
-    padding: 4rem 0;
+    padding: 4rem 0 4rem 3rem;
     background: #fff;
     overflow: hidden;
     position: relative;
@@ -154,6 +154,11 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+    
+    .gallery-section {
+        padding: 4rem 0rem;
+    }
+
     .gallery-header {
         flex-direction: column;
         margin-bottom: 30px;
