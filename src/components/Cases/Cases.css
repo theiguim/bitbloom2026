@@ -122,7 +122,7 @@
 }
 
 .project-poster:hover .poster-img {
-    object-position: bottom center;
+    /* object-position: bottom center; */
     transform: scale(1.1);
     filter: brightness(1);
 }
