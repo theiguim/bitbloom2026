@@ -1,7 +1,6 @@
 import SoftwareData from "../SoftwareData";
 import { targetCities } from "@/lib/cities";
 
-
 const formatCityName = (slug) => {
   if (!slug) return "";
   return slug
@@ -15,7 +14,9 @@ const formatCityName = (slug) => {
 
 // SEO Dinâmico Local
 export async function generateMetadata({ params }) {
-  const city = formatCityName(params.city);
+  // CORREÇÃO: Extraindo da Promise com await
+  const { city: citySlug } = await params;
+  const city = formatCityName(citySlug);
 
   return {
     title: `Desenvolvimento de Sistemas e Apps em ${city} | BitBloom AI`,
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }) {
       "react native", "custom software"
     ],
     alternates: {
-      canonical: `https://www.bitbloomai.com/sistemas-custom/${params.city}`,
+      canonical: `https://www.bitbloomai.com/sistemas-custom/${citySlug}`,
     },
     openGraph: {
       title: `Líder em Desenvolvimento de Software em ${city} | BitBloom AI`,
@@ -40,11 +41,13 @@ export async function generateMetadata({ params }) {
 
 // SSG para cidades prioritárias
 export async function generateStaticParams() {
-  // Em vez de digitar o array na mão, usamos o importado
   return targetCities.map((city) => ({ city }));
 }
 
-export default function CitySoftwarePage({ params }) {
-  const cityName = formatCityName(params.city);
+// CORREÇÃO: Componente async e await params
+export default async function CitySoftwarePage({ params }) {
+  const { city } = await params; 
+  const cityName = formatCityName(city);
+  
   return <SoftwareData city={cityName} />;
 }

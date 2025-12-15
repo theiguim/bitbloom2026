@@ -48,7 +48,7 @@
 /* --- HERO "DEEP TECH" (Escuro) --- */
 .web-hero {
   position: relative;
-  padding: 11rem 2rem 10rem;
+  padding: 8rem 2rem 10rem;
   text-align: center;
   background-color: var(--bg-deep);
   overflow: hidden;
@@ -107,10 +107,10 @@
 }
 
 .web-hero h1 {
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-size: clamp(3rem, 8vw, 4rem);
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.05;
+  line-height: 1.1;
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
 }

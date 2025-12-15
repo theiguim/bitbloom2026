@@ -1,7 +1,6 @@
 import WebDevData from "../WebDevData";
 import { targetCities } from "@/lib/cities";
 
-
 // Função para formatar o slug (ex: sao-joao-del-rei -> São João del-Rei)
 const formatCityName = (slug) => {
   if (!slug) return "";
@@ -17,7 +16,9 @@ const formatCityName = (slug) => {
 
 // 1. GERAÇÃO DINÂMICA DE METADATA (SEO DE PONTA)
 export async function generateMetadata({ params }) {
-  const city = formatCityName(params.city);
+  // CORREÇÃO: Extraindo da Promise com await
+  const { city: citySlug } = await params;
+  const city = formatCityName(citySlug);
 
   return {
     title: `Criação de Sites e Sistemas em ${city} | BitBloom AI`,
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }) {
       "next.js", "react"
     ],
     alternates: {
-      canonical: `https://www.bitbloomai.com/desenvolvimento-web/${params.city}`,
+      canonical: `https://www.bitbloomai.com/desenvolvimento-web/${citySlug}`,
     },
     openGraph: {
       title: `Líder em Desenvolvimento Web em ${city} | BitBloom AI`,
@@ -40,17 +41,16 @@ export async function generateMetadata({ params }) {
   };
 }
 
-// 2. GERAÇÃO ESTÁTICA (SSG) - Opcional mas RECOMENDADO para SEO Extremo
-// Isso cria as páginas HTML fisicamente na hora do build para as cidades principais.
-// As outras cidades não listadas aqui serão geradas na hora do acesso (SSR).
+// 2. GERAÇÃO ESTÁTICA (SSG)
 export async function generateStaticParams() {
-  // Em vez de digitar o array na mão, usamos o importado
   return targetCities.map((city) => ({ city }));
 }
 
 // 3. O COMPONENTE DA PÁGINA
-export default function CityLandingPage({ params }) {
-  const cityName = formatCityName(params.city);
+// CORREÇÃO: Componente async e await params
+export default async function CityLandingPage({ params }) {
+  const { city } = await params; 
+  const cityName = formatCityName(city);
   
   // Passa o nome da cidade formatado para o componente de dados
   return <WebDevData city={cityName} />;

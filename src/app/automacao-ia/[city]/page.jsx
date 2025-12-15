@@ -12,9 +12,10 @@ const formatCityName = (slug) => {
     .join(" ");
 };
 
-// SEO Dinâmico Local
 export async function generateMetadata({ params }) {
-  const city = formatCityName(params.city);
+  // Em metadata também precisa do await
+  const { city: citySlug } = await params;
+  const city = formatCityName(citySlug);
 
   return {
     title: `Automação de Processos e IA em ${city} | BitBloom AI`,
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }) {
       "consultoria n8n", "python"
     ],
     alternates: {
-      canonical: `https://www.bitbloomai.com/automacao-ia/${params.city}`,
+      canonical: `https://www.bitbloomai.com/automacao-ia/${citySlug}`,
     },
     openGraph: {
       title: `Líder em Automação Comercial em ${city} | BitBloom AI`,
@@ -37,12 +38,14 @@ export async function generateMetadata({ params }) {
   };
 }
 
-// SSG para cidades prioritárias
 export async function generateStaticParams() {
   return targetCities.map((city) => ({ city }));
 }
 
-export default function CityAutomacaoPage({ params }) {
-  const cityName = formatCityName(params.city);
+// CORREÇÃO AQUI: Componente async e await params
+export default async function CityAutomacaoPage({ params }) {
+  const { city } = await params; // Extrai a cidade da Promessa
+  const cityName = formatCityName(city);
+  
   return <AutomacaoData city={cityName} />;
 }

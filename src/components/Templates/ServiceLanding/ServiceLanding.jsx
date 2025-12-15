@@ -48,7 +48,7 @@ export default function ServiceLanding({ content }) {
             <span className="hero-badge">
               <span className="pulse-dot"></span> {content.hero.badge}
             </span>
-          </div>
+          </div>  
           <h1>
             {content.hero.titlePart1} <br />
             <span className="text-gradient-modern">{content.hero.titlePart2}</span>
